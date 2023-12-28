@@ -15,4 +15,7 @@ public class Paiement implements Serializable {
     private Long id;
     private String name;
     private Long montant;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User user;
 }

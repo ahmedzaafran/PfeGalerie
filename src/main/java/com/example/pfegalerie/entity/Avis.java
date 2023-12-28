@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -16,4 +17,9 @@ public class Avis implements Serializable {
     private Long id;
     private String commentaires;
     private Long note;
+
+    @OneToMany(cascade = {
+            CascadeType.ALL
+    },mappedBy = "avis")
+    private Set<Types> types;
 }
